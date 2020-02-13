@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <style>
+        /* http://meyerweb.com/eric/tools/css/reset/ 
+        v2.0 | 20110126
+        License: none (public domain)
+        */
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        figure {
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        body {
+            line-height: 1;
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        /* reset end */
+
+        body {
+            background-color: #343331;
+            color: white;
+        }
+        .heading-color-control {
+            font-family: Hartwell;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 21px;
+            text-transform: uppercase;
+            color: #0072B8;
+            width: 100%;
+            margin: 70px 0 30px 0;
+            position: relative;
+        }
+        .heading-color-control:after, .heading-color-control:before {
+            content: "";
+            width: 92px;
+            height: 1px;
+            background: #0072B8;
+            position: absolute;
+            top: 50%;
+        }
+        .heading-color-control:after {
+            right: 18%;
+        }
+        .heading-color-control:before {
+            left: 18%;
+        }   
+        .global-wrapper {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        .form-input-section>.form-submit-button {
+            outline: none;
+            border: none;
+            border-radius: 6px;
+            width: 266px;
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 29px;
+            color: #0072B8;
+            background: transparent;
+            margin: 40px auto 25px;
+        }
+        .full-width {
+            flex-basis: 100%;
+        }
+        .half-width {
+            flex-basis: 41.3%;
+        }
+        label {
+            display: block;
+            width: 70%;
+            margin-bottom: 10px;
+            margin: 0 auto;
+            padding: 25px 0 10px 0;
+            color: #7D7D89;
+        }
+        .form-input-section>input {
+            width: 70%;
+            border-radius: 5px;
+            padding: 5px 10px;
+            border: none;
+            margin-bottom: 20px;
+            background: #F8F8FC;
+            height: 30px;
+            margin: 0 auto;
+            display: block;
+        }
+        .form-input-section.checkbox-block>input,
+        .form-input-section.checkbox-block>label {
+            display:inline-block;
+            width: auto;
+        }
+        .form-input-section.checkbox-block>p {
+            display:inline-block;
+            width: 80%;
+        }
+        .align-center {
+            text-align: center;
+        }
+        h2 {
+            margin-top: 40px;
+        }
+        .global-heading {
+            font-family: Raleway;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 28px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        .main-info {
+            font-family: Raleway;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 16px;
+            color: #FFFFFF;
+        }
+        .first-page {
+            background-image: url(default-background.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            height: 100vh;
+            padding-top: 33px;
+        }
+        .border-wrapper {
+            padding-top: 15%;
+            margin: 0 33px 33px;
+            border: 5px solid #68BEDB;
+            border-left: none;
+            position: relative;
+            opacity: 0.9999999;
+            z-index: 10;
+        }
+        .border-wrapper:after {
+            content: "";
+            position: absolute;
+            background-color: #68BEDB;
+            width: 5px;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: 20;
+        }
+        .brief-logo {
+            transform: translate(-33px, 0);
+        }
+        .text-block-with-background {
+            padding: 50px 15px 75px 25px;
+        }
+        .text-block-with-background>p {
+            padding: 25px 40px;
+        }
+        .text-block-with-background>h1 {
+            padding-left: 40px;
+        }
+        .main-form {
+            background-image: url(form-background.png);
+            background-repeat: repeat-y;
+            background-size: 100% auto;
+            min-height: 100vh;
+            color: #0072B8;
+        }
+        .form-block-construction {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 15px 33px;
+        }
+        .customer-person-info {
+            width: 100%;
+            margin-top: 100px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: row;
+        }
+        .form-text-block {
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center;
+            color: #616161;
+            width: 70%;
+            margin: 0 auto;
+        }
+        .form-input-section .checkbox-input, .form-input-section .checkbox-label {
+            width: auto;
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            height: auto;
+            position: relative;
+            margin-top: 25px;
+        }
+        .form-input-section .checkbox-label {
+            padding-left: 25px;
+        }
+        .form-input-section .checkbox-input {
+            display: none;
+        }
+        .form-input-section .checkbox-label:before {
+            display: inline-block;
+            content: "\2713";
+            color: transparent;
+            border-radius: 3px;
+            border: 2px solid #0072B8;
+            transform: translate(-15px, 0);
+            padding: 7.5px 9px;
+        }
+        .form-input-section .checkbox-input:checked + .checkbox-label:before {
+            color: black;
+        }
+        .padding-left {
+            padding-left: 30%;
+        }
+        @media (min-width: 992px) {
+            .first-page {
+                background-image: url(desctop-background.jpg);
+            }
+            .main-form {
+                background-image: url(form-desctop-background.jpg);
+            }
+        }
+        @media (max-width: 992px) {
+            .brief-logo {
+                max-width: 280px;
+            }
+            .global-wrapper {
+                max-width: 100%;
+            }
+            .heading-color-control:after, .heading-color-control:before {
+                width: 30px;
+            }
+            .heading-color-control:after {
+                right: -25px;
+            }
+            .heading-color-control:before {
+                left: -25px;
+            }
+            label {
+                width: 90%;
+            }
+            .form-input-section>input {
+                width: 90%;
+            }
+            .half-width {
+                flex-basis: 100%;
+            }
+            .padding-left {
+                padding-left: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="global-wrapper">
+        <section class="first-page">
+            <div class="border-wrapper"> 
+                <img src="visitka2.jpg" alt="brief logo" class="brief-logo">
+                <div class="text-block-with-background">
+                    <h1 class="global-heading">Бриф на SMM-продвижение</h1>
+                    <p class="main-info">
+                        Бриф – важная составляющая часть сотрудничества между Клиентом и исполнителем. 
+                        Заполнив его, мы сможем лучше понять друг друга и воплотить в жизнь все пожелания наших Клиентов. 
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="main-form">
+        <form action="mailto:test@gmail.com" enctype="text/plain" method="post" class="form-block-construction">
+            <h2 class="heading-color-control align-center">Информация о компании</h2>
+            <div class="form-input-section full-width">
+                <label for="brand-name" >Имя бренда:</label>
+                <input id="brand-name" type="text" name="brand-name">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="social-brand">Бренд в социальных сетях:</label>
+                <input id="social-brand" type="text" name="social-brand">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="company-site">Сайт компании:</label>
+                <input id="company-site" type="text" name="company-site">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="products">Основные продукты и оказываемые услуги:</label>
+                <input id="products" type="text" name="products">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="your-achievement">Ваши награды, достижения:</label>
+                <input id="your-achievement" type="text" name="your-achievement">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="your-needs">Какую потребность вы закрываете:</label>
+                <input id="your-needs" type="text" name="your-needs">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="brand-portrayals">Характер и имидж (философия) бренда/продукта/услуг:</label>
+                <input id="brand-portrayals" type="text" name="brand-portrayals">
+            </div>
+            <div class="customer-person-info">
+                <div class="form-input-section full-width">
+                    <label for="name" >Контактное лицо:</label>
+                    <input id="name" type="text" name="name">
+                </div>
+                <div class="form-input-section half-width">
+                    <label for="phone">Телефон:</label>
+                    <input id="phone" type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                </div>            
+                <div class="form-input-section half-width">
+                    <label for="email">Email:</label>
+                    <input id="email" type="email" name="email" pattern=".+@gmail.com" required>
+                </div>
+            </div>
+            <h2 class="heading-color-control align-center">Положение на рынке</h2>
+            <div class="form-input-section full-width">
+                <label for="main-idea">Какую задачу должен выполнять аккаунт бренда в социальных сетях:</label>
+                <input id="main-idea" type="text" name="main-idea">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="main-task">Какую проблему Вы решаете для Ваших клиентов:</label>
+                <input id="main-task" type="text" name="main-task">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="accaunts-target">Опишите, каких целей Вы бы хотели достичь с помощью аккаунта бренда:</label>
+                <input id="accaunts-target" type="text" name="accaunts-target">
+            </div>
+            <h2 class="heading-color-control align-center">Дизайн</h2>
+            <p class="form-text-block">
+                Если у компании уже есть логотип и фирменный стиль – пожалуйста, приложите их к письму. 
+            </p>
+            <div class="form-input-section full-width padding-left">
+                <input type="checkbox" id="have-design" name="have-design" class="checkbox-input">
+                <label for="have-design" class="checkbox-label">У нашей компании уже есть логотип</label>
+            </div>
+            <h2 class="heading-color-control align-center">Примеры и конкуренты</h2>
+            <p class="form-text-block full-text">
+                Лучше всего указать примеры аккаунтов компаний, работающих в вашей сфере, 
+                при отсутствии таковых – любые другие. Пожалуйста, не забудьте указать основные причины, 
+                по которым те или иные примеры попали в этот список. 
+            </p>
+            <div class="form-input-section full-width">
+                <label for="social-link">Ссылка на социальные сети, которые нравятся и что именно, перечислите:</label>
+                <input id="social-link" type="text" name="social-link">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="competitors">Ваши главные конкуренты:</label>
+                <input id="competitors" type="text" name="competitors">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="your-advantage">Опишите ваши основные конкурентные преимущества:</label>
+                <input id="your-advantage" type="text" name="your-advantage">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="weakness">Опишите ваши слабые стороны:</label>
+                <input id="weakness" type="text" name="weakness">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="competitors-strength">Опишите сильные стороны ваших конкурентов:</label>
+                <input id="competitors-strength" type="text" name="competitors-strength">
+            </div>
+            <h2 class="heading-color-control align-center">Целевая аудитория</h2>
+            <div class="form-input-section full-width">
+                <label for="regular-customers">Опишите Ваших постоянных клиентов:</label>
+                <input id="regular-customers" type="text" name="regular-customers">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="customers-location">Где живет Ваш покупатель:</label>
+                <input id="customers-location" type="text" name="customers-location">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="anti-customer">Опишите того, кто никогда не купит ваш товар/услугу, почему:</label>
+                <input id="anti-customer" type="text" name="anti-customer">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="customers-needs">Основные желания, потребности и проблемы вашего потребителя:</label>
+                <input id="customers-needs" type="text" name="customers-needs">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="disagree-reason">Наиболее вероятные причины отказа от покупки товара/услуги:</label>
+                <input id="disagree-reason" type="text" name="disagree-reason">
+            </div>
+            <h2 class="heading-color-control align-center">Функционал</h2>
+            <p class="form-text-block">
+                Перечислите требования к ведению социальных сетей, если они необходимы. 
+            </p>
+            <div class="form-input-section full-width">
+                <label for="social-tabu">Табу в Ваших аккаунтах:</label>
+                <input id="social-tabu" type="text" name="social-tabu">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="social-lang">На каком языке хотите вести диалог с публикой:</label>
+                <input id="social-lang" type="text" name="social-lang">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="content-type">Опишите, как видите наполнение профиля в социальных сетях:</label>
+                <input id="content-type" type="text" name="content-type">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="month-publication-number">Сколько публикация в месяц хотели бы видеть:</label>
+                <input id="month-publication-number" type="text" name="month-publication-number">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="stories">Хотели бы доверить нам Ваши сторис:</label>
+                <input id="stories" type="text" name="stories">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="month-stories-number">Сколько сторис в месяц для Вас приемлемо:</label>
+                <input id="month-stories-number" type="text" name="month-stories-number">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="video-content">Хотели бы использовать видеоконтент:</label>
+                <input id="video-content" type="text" name="video-content">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="video-content-type">Какого типа видеоконтент Вам предпочтителен:</label>
+                <input id="video-content-type" type="text" name="video-content-type">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="photo-content-type">Пожелания по фотоконтенту:</label>
+                <input id="photo-content-type" type="text" name="photo-content-type">
+            </div>
+            <div class="form-input-section full-width">
+                <label for="timeline">Дата заполнения:</label>
+                <input id="timeline" type="date" name="timeline">
+            </div>
+            <div class="form-input-section full-width align-center">
+                <input type="submit" value="Спасибо за заполнение!" class="form-submit-button">
+            </div>
+        </form>
+    </section>                   
+    </div>
+</body>
+</html>
