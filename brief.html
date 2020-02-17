@@ -108,8 +108,18 @@
             font-size: 24px;
             line-height: 29px;
             color: #0072B8;
-            background: transparent;
+            background: #F8F8FC;
             margin: 40px auto 25px;
+            cursor: pointer;
+        }
+        .thank-text {
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 29px;
+            color: #0072B8;
+            margin: auto 25px;
         }
         .full-width {
             flex-basis: 100%;
@@ -123,6 +133,12 @@
             margin-bottom: 10px;
             margin: 0 auto;
             padding: 25px 0 10px 0;
+            color: #7D7D89;
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 21px;
             color: #7D7D89;
         }
         .form-input-section>input {
@@ -232,7 +248,7 @@
             font-family: Lato;
             font-style: normal;
             font-weight: normal;
-            font-size: 12px;
+            font-size: 16px;
             line-height: 14px;
             text-align: center;
             color: #616161;
@@ -261,7 +277,7 @@
             border-radius: 3px;
             border: 2px solid #0072B8;
             transform: translate(-15px, 0);
-            padding: 7.5px 9px;
+            padding: 5px 9px;
         }
         .form-input-section .checkbox-input:checked + .checkbox-label:before {
             color: black;
@@ -269,6 +285,15 @@
         .padding-left {
             padding-left: 30%;
         }
+        ::-webkit-datetime-edit { padding: 1em;  font-size: 20px;}
+        ::-webkit-datetime-edit-text { color: #0072B8; padding: 0 0.3em; }
+        /*
+        ::-webkit-datetime-edit-fields-wrapper { background: silver; }
+        ::-webkit-datetime-edit-month-field { color: blue; }
+        ::-webkit-datetime-edit-day-field { color: green; }
+        ::-webkit-datetime-edit-year-field { color: purple; }
+        ::-webkit-calendar-picker-indicator { background: #0072B8; }*/
+        ::-webkit-inner-spin-button { padding-top: 12px; }
         @media (min-width: 992px) {
             .first-page {
                 background-image: url(desctop-background.jpg);
@@ -312,6 +337,10 @@
                 width: auto;
                 font-size: 20px;
             }
+            .form-input-section .checkbox-label {
+                font-size: 12px;
+            }
+            ::-webkit-datetime-edit {font-size: 14px;}
         }
     </style>
 </head>
@@ -330,44 +359,44 @@
             </div>
         </section>
         <section class="main-form">
-        <form action="mailto:test@gmail.com" enctype="text/plain" method="post" class="form-block-construction">
+        <form action="mailto:olgafkharkov@gmail.com" method="post" enctype="text/plain" class="form-block-construction">
             <h2 class="heading-color-control align-center">Информация о компании</h2>
             <div class="form-input-section full-width">
                 <label for="brand-name" >Имя бренда:</label>
-                <input id="brand-name" type="text" name="brand-name">
+                <input id="brand-name" type="text" name="brand-name" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="social-brand">Бренд в социальных сетях:</label>
-                <input id="social-brand" type="text" name="social-brand">
+                <input id="social-brand" type="text" name="social-brand" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="company-site">Сайт компании:</label>
-                <input id="company-site" type="text" name="company-site">
+                <input id="company-site" type="text" name="company-site" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="products">Основные продукты и оказываемые услуги:</label>
-                <input id="products" type="text" name="products">
+                <input id="products" type="text" name="products" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="your-achievement">Ваши награды, достижения:</label>
-                <input id="your-achievement" type="text" name="your-achievement">
+                <input id="your-achievement" type="text" name="your-achievement" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="your-needs">Какую потребность вы закрываете:</label>
-                <input id="your-needs" type="text" name="your-needs">
+                <input id="your-needs" type="text" name="your-needs" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="brand-portrayals">Характер и имидж (философия) бренда/продукта/услуг:</label>
-                <input id="brand-portrayals" type="text" name="brand-portrayals">
+                <input id="brand-portrayals" type="text" name="brand-portrayals" required>
             </div>
             <div class="customer-person-info">
                 <div class="form-input-section full-width">
                     <label for="name" >Контактное лицо:</label>
-                    <input id="name" type="text" name="name">
+                    <input id="name" type="text" name="name" required>
                 </div>
                 <div class="form-input-section half-width">
-                    <label for="phone">Телефон:</label>
-                    <input id="phone" type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                    <label for="phone">Телефон в формате (099-999-99-99):</label>
+                    <input id="phone" type="tel" name="phone" pattern="0[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required>
                 </div>            
                 <div class="form-input-section half-width">
                     <label for="email">Email:</label>
@@ -377,15 +406,15 @@
             <h2 class="heading-color-control align-center">Положение на рынке</h2>
             <div class="form-input-section full-width">
                 <label for="main-idea">Какую задачу должен выполнять аккаунт бренда в социальных сетях:</label>
-                <input id="main-idea" type="text" name="main-idea">
+                <input id="main-idea" type="text" name="main-idea" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="main-task">Какую проблему Вы решаете для Ваших клиентов:</label>
-                <input id="main-task" type="text" name="main-task">
+                <input id="main-task" type="text" name="main-task" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="accaunts-target">Опишите, каких целей Вы бы хотели достичь с помощью аккаунта бренда:</label>
-                <input id="accaunts-target" type="text" name="accaunts-target">
+                <input id="accaunts-target" type="text" name="accaunts-target" required>
             </div>
             <h2 class="heading-color-control align-center">Дизайн</h2>
             <p class="form-text-block">
@@ -403,44 +432,44 @@
             </p>
             <div class="form-input-section full-width">
                 <label for="social-link">Ссылка на социальные сети, которые нравятся и что именно, перечислите:</label>
-                <input id="social-link" type="text" name="social-link">
+                <input id="social-link" type="text" name="social-link" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="competitors">Ваши главные конкуренты:</label>
-                <input id="competitors" type="text" name="competitors">
+                <input id="competitors" type="text" name="competitors" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="your-advantage">Опишите ваши основные конкурентные преимущества:</label>
-                <input id="your-advantage" type="text" name="your-advantage">
+                <input id="your-advantage" type="text" name="your-advantage" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="weakness">Опишите ваши слабые стороны:</label>
-                <input id="weakness" type="text" name="weakness">
+                <input id="weakness" type="text" name="weakness" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="competitors-strength">Опишите сильные стороны ваших конкурентов:</label>
-                <input id="competitors-strength" type="text" name="competitors-strength">
+                <input id="competitors-strength" type="text" name="competitors-strength" required>
             </div>
             <h2 class="heading-color-control align-center">Целевая аудитория</h2>
             <div class="form-input-section full-width">
                 <label for="regular-customers">Опишите Ваших постоянных клиентов:</label>
-                <input id="regular-customers" type="text" name="regular-customers">
+                <input id="regular-customers" type="text" name="regular-customers" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="customers-location">Где живет Ваш покупатель:</label>
-                <input id="customers-location" type="text" name="customers-location">
+                <input id="customers-location" type="text" name="customers-location" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="anti-customer">Опишите того, кто никогда не купит ваш товар/услугу, почему:</label>
-                <input id="anti-customer" type="text" name="anti-customer">
+                <input id="anti-customer" type="text" name="anti-customer" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="customers-needs">Основные желания, потребности и проблемы вашего потребителя:</label>
-                <input id="customers-needs" type="text" name="customers-needs">
+                <input id="customers-needs" type="text" name="customers-needs" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="disagree-reason">Наиболее вероятные причины отказа от покупки товара/услуги:</label>
-                <input id="disagree-reason" type="text" name="disagree-reason">
+                <input id="disagree-reason" type="text" name="disagree-reason" required>
             </div>
             <h2 class="heading-color-control align-center">Функционал</h2>
             <p class="form-text-block">
@@ -448,46 +477,49 @@
             </p>
             <div class="form-input-section full-width">
                 <label for="social-tabu">Табу в Ваших аккаунтах:</label>
-                <input id="social-tabu" type="text" name="social-tabu">
+                <input id="social-tabu" type="text" name="social-tabu" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="social-lang">На каком языке хотите вести диалог с публикой:</label>
-                <input id="social-lang" type="text" name="social-lang">
+                <input id="social-lang" type="text" name="social-lang" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="content-type">Опишите, как видите наполнение профиля в социальных сетях:</label>
-                <input id="content-type" type="text" name="content-type">
+                <input id="content-type" type="text" name="content-type" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="month-publication-number">Сколько публикация в месяц хотели бы видеть:</label>
-                <input id="month-publication-number" type="text" name="month-publication-number">
+                <input id="month-publication-number" type="text" name="month-publication-number" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="stories">Хотели бы доверить нам Ваши сторис:</label>
-                <input id="stories" type="text" name="stories">
+                <input id="stories" type="text" name="stories" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="month-stories-number">Сколько сторис в месяц для Вас приемлемо:</label>
-                <input id="month-stories-number" type="text" name="month-stories-number">
+                <input id="month-stories-number" type="text" name="month-stories-number" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="video-content">Хотели бы использовать видеоконтент:</label>
-                <input id="video-content" type="text" name="video-content">
+                <input id="video-content" type="text" name="video-content" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="video-content-type">Какого типа видеоконтент Вам предпочтителен:</label>
-                <input id="video-content-type" type="text" name="video-content-type">
+                <input id="video-content-type" type="text" name="video-content-type" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="photo-content-type">Пожелания по фотоконтенту:</label>
-                <input id="photo-content-type" type="text" name="photo-content-type">
+                <input id="photo-content-type" type="text" name="photo-content-type" required>
             </div>
             <div class="form-input-section full-width">
                 <label for="timeline">Дата заполнения:</label>
-                <input id="timeline" type="date" name="timeline">
+                <input id="timeline" type="date" name="timeline" required>
             </div>
             <div class="form-input-section full-width align-center">
-                <input type="submit" value="Спасибо за заполнение!" class="form-submit-button">
+                <input type="submit" value="Отправить" class="form-submit-button">
+            </div>
+            <div class="form-input-section full-width align-center">
+                <p class="thank-text">Спасибо за заполнение!</p>
             </div>
         </form>
     </section>                   
