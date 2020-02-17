@@ -107,12 +107,13 @@
             font-weight: normal;
             font-size: 24px;
             line-height: 29px;
-            color: #0072B8;
-            background: #F8F8FC;
+            color: white;
+            background: #0093E9;
             margin: 40px auto 25px;
             cursor: pointer;
+            padding-bottom: 36px;
         }
-        .thank-text {
+        /*.thank-text {
             font-family: Lato;
             font-style: normal;
             font-weight: normal;
@@ -120,7 +121,7 @@
             line-height: 29px;
             color: #0072B8;
             margin: auto 25px;
-        }
+        }*/
         .full-width {
             flex-basis: 100%;
         }
@@ -139,7 +140,6 @@
             font-weight: normal;
             font-size: 16px;
             line-height: 21px;
-            color: #7D7D89;
         }
         .form-input-section>input {
             width: 70%;
@@ -180,8 +180,8 @@
             font-family: Raleway;
             font-style: normal;
             font-weight: 300;
-            font-size: 14px;
-            line-height: 16px;
+            font-size: 22px;
+            line-height: 28px;
             color: #FFFFFF;
         }
         .first-page {
@@ -249,7 +249,7 @@
             font-style: normal;
             font-weight: normal;
             font-size: 16px;
-            line-height: 14px;
+            line-height: 24px;
             text-align: center;
             color: #616161;
             width: 70%;
@@ -418,7 +418,8 @@
             </div>
             <h2 class="heading-color-control align-center">Дизайн</h2>
             <p class="form-text-block">
-                Если у компании уже есть логотип и фирменный стиль – пожалуйста, приложите их к письму. 
+                Если у компании уже есть логотип и фирменный стиль – пожалуйста, прикрепите их к форме. 
+                <input name="myFile" type="file">
             </p>
             <div class="form-input-section full-width padding-left">
                 <input type="checkbox" id="have-design" name="have-design" class="checkbox-input">
@@ -488,7 +489,7 @@
                 <input id="content-type" type="text" name="content-type" required>
             </div>
             <div class="form-input-section full-width">
-                <label for="month-publication-number">Сколько публикация в месяц хотели бы видеть:</label>
+                <label for="month-publication-number">Сколько публикаций в месяц хотели бы видеть:</label>
                 <input id="month-publication-number" type="text" name="month-publication-number" required>
             </div>
             <div class="form-input-section full-width">
@@ -518,9 +519,9 @@
             <div class="form-input-section full-width align-center">
                 <input type="submit" value="Отправить" class="form-submit-button">
             </div>
-            <div class="form-input-section full-width align-center">
+            <!--<div class="form-input-section full-width align-center">
                 <p class="thank-text">Спасибо за заполнение!</p>
-            </div>
+            </div>-->
         </form>
     </section>                   
     </div>
